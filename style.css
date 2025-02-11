@@ -118,13 +118,17 @@ header {
   position: fixed;
   width: 100%;
   height: 80px;
-  background: linear-gradient(to bottom, maroon, var(--red), transparent);
+  background: linear-gradient(
+    to bottom,
+    maroon,
+    rgba(189, 0, 0, 0.5),
+    transparent
+  );
   z-index: 2;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 .navBar2 {
   background: linear-gradient(to bottom, maroon, var(--red));
   position: fixed;
@@ -136,7 +140,6 @@ header {
   align-items: center;
   box-shadow: 0px 0px 5px black;
 }
-
 .navBar ul {
   list-style-type: none;
   margin-right: 5px;
@@ -150,7 +153,6 @@ header {
   text-shadow: 0px 0px 1px black;
   color: white;
 }
-
 .picture {
   height: 60px;
   width: 60px;
@@ -162,7 +164,6 @@ header {
   box-sizing: border-box;
   box-shadow: 0px 0px 2px black, 0px 0px 2px black inset;
 }
-
 .hamburger {
   height: 50px;
   width: 50px;
@@ -173,10 +174,86 @@ header {
   align-items: center;
   position: relative;
 }
-
 .line {
   width: 100%;
   height: 5px;
   background: black;
   border-radius: 20px;
+}
+.mega-menu {
+  width: 100%;
+  height: 300px;
+  background: rgba(255, 143, 143, 0.61);
+  user-select: none;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  border-bottom: 1px solid maroon;
+}
+.row {
+  margin: 0;
+  padding: 0;
+}
+.col-4 {
+  margin-top: 80px;
+  height: 100%;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2 {
+    font-family: "Oswald", sans-serif;
+    text-align: center;
+    padding: 0 !important;
+    margin: 0;
+    margin-bottom: -10px;
+  }
+  hr {
+    height: 5px;
+    border: none;
+    width: 90%;
+    background: black;
+    margin-right: auto;
+    margin-left: auto;
+    opacity: 0.75;
+  }
+  ul {
+    list-style-type: none;
+    width: 90%;
+    padding-left: 0;
+    li {
+      font-family: "Raleway", sans-serif;
+      position: relative;
+      cursor: pointer;
+      p {
+        width: auto;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      p::after {
+        position: absolute;
+        content: "";
+        background-color: black;
+        height: 2px;
+        width: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -1px;
+        transition: 0.5s;
+      }
+    }
+    li:hover {
+      p::after {
+        position: absolute;
+        content: "";
+        background-color: black;
+        height: 2px;
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -1px;
+        transition: 0.5s;
+      }
+    }
+  }
 }
