@@ -118,7 +118,7 @@ header {
   position: fixed;
   width: 100%;
   height: 80px;
-  background: linear-gradient(to bottom, maroon, var(--red), transparent);
+  background: linear-gradient(to bottom, var(--red), maroon, transparent);
   z-index: 2;
   display: flex;
   justify-content: space-between;
@@ -126,7 +126,7 @@ header {
 }
 
 .navBar2 {
-  background: linear-gradient(to bottom, maroon, var(--red));
+  background: linear-gradient(to bottom, var(--red), maroon);
   position: fixed;
   width: 100%;
   height: 80px;
