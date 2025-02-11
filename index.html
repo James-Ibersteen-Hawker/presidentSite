@@ -23,21 +23,26 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <style></style>
   </head>
 
   <body>
     <header>
-      <div class="d-none d-sm-block" onmouseenter="" onmouseleave="">
-        <div class="navBar">
+      <div
+        class="d-none d-sm-block"
+        onmouseenter="menuDown()"
+        onmouseleave="menuUp()"
+      >
+        <div class="navBar" id="navbar">
           <img class="picture" src="data-files/coolidge-portrait.jpg" />
-          <ul>
+          <ul id="ul">
             <li>Early Life</li>
             <li>In Government</li>
             <li>Legacy</li>
             <li>Timeline</li>
           </ul>
         </div>
-        <div class="mega-menu row">
+        <div class="mega-menu row" id="mega-menu">
           <div class="col-4">
             <h2>Early Life</h2>
             <hr />
@@ -92,6 +97,10 @@
               </li>
             </ul>
           </div>
+          <div class="col-12">
+            <hr />
+            <h2>Timeline</h2>
+          </div>
         </div>
       </div>
       <!--<div class="d-block d-sm-none">
@@ -141,5 +150,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="signature.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
