@@ -103,16 +103,21 @@
           </div>
         </div>
       </div>
-      <!--<div class="d-block d-sm-none">
+      <div class="d-block d-sm-none">
         <div class="navBar2">
           <img class="picture" src="data-files/coolidge-portrait.jpg" />
-          <div class="hamburger">
+          <div
+            class="hamburger"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#presNav"
+            aria-controls="presNav"
+          >
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
           </div>
         </div>
-      </div>-->
+      </div>
       <!--header images-->
       <div id="header" class="d-none d-sm-block">
         <iframe
@@ -159,5 +164,27 @@
     ></script>
     <script src="signature.js"></script>
     <script src="script.js"></script>
+
+    <div
+      class="offcanvas offcanvas-end"
+      data-bs-scroll="true"
+      tabindex="-1"
+      id="presNav"
+      aria-labelledby="presNavLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="presNavLabel">Menu</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <hr />
+      <div class="offcanvas-body">
+        <p>content</p>
+      </div>
+    </div>
   </body>
 </html>
