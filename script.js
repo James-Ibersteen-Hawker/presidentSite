@@ -4,8 +4,8 @@ let quotes = [
   "I have never been hurt by what I have not said.",
   "Collecting more taxes than is absolutely necessary is legalized robbery.",
   "No person was ever honored for what he received. Honor has been the reward for what he gave.",
-  "If you see ten troubles coming down the road, you can be sure that nine will run into the ditch before they reach you.",
-  "Nothing in the world can take the place of persistence. Talent will not; nothing is more common than unsuccessful men with talent.",
+  "If you see ten troubles coming down the road...nine will run into the ditch before they reach you.",
+  "Nothing in the world can take the place of persistence. ",
   "It takes a great man to be a good listener.",
   "Don’t expect to build up the weak by pulling down the strong.",
 ];
@@ -48,6 +48,11 @@ window.onload = function startup() {
   `;
   document.getElementsByTagName("STYLE")[0].append(anims);
   document.getElementsByTagName("STYLE")[0].append(classes);
+  ulContent = document.getElementById("ul").innerHTML;
+  //quote
+  document.getElementById("quote").innerHTML = `&#8220;${
+    quotes[Math.floor(Math.random() * quotes.length)]
+  }&#8221;`;
 };
 
 function menuDown() {
@@ -62,3 +67,13 @@ function menuUp() {
   document.getElementById("mega-menu").classList.add("menuUp");
   document.getElementById("ul").innerHTML = ulContent;
 }
+
+window.addEventListener("scroll", function () {
+  if (scrollY > window.innerHeight + 150 && window.innerWidth > 576) {
+    document.getElementById("navBar").classList.remove("fadeNavOut");
+    document.getElementById("navBar").classList.add("fadeNavIn");
+  } else {
+    document.getElementById("navBar").classList.remove("fadeNavIn");
+    document.getElementById("navBar").classList.add("fadeNavOut");
+  }
+});

@@ -9,8 +9,9 @@ body {
   padding: 0 !important;
   margin: 0 !important;
   overflow-x: clip;
-  --deepblue: rgb(29, 0, 192);
+  --deepblue: rgb(21, 5, 110);
   --red: rgb(189, 0, 0);
+  --white: rgb(255, 251, 234);
 }
 canvas {
   margin: 0 !important;
@@ -179,7 +180,6 @@ header {
   filter: drop-shadow(0px 0px 0px black);
   transition: 0.1s;
 }
-
 .hamburger:hover {
   filter: drop-shadow(0px 0px 2px black);
   transition: 0.1s;
@@ -326,7 +326,7 @@ header {
 }
 #quote {
   width: calc(100% - 200px);
-  font-size: 50px;
+  font-size: 30px;
   padding-left: 15px;
 }
 #quote-image {
@@ -364,18 +364,16 @@ main {
   margin: 0 !important;
 }
 @media screen and (max-width: 680px) {
-  #quote {
-    font-size: 30px;
-  }
-}
-.offcanvas {
 }
 .slant {
   width: 100%;
-  height: 200px;
+  min-height: 200px;
+  height: 350px;
   background: linear-gradient(to bottom, maroon, var(--red));
   position: relative;
   z-index: 2;
+  filter: drop-shadow(0px 0px 3px var(--white))
+    drop-shadow(0px 0px 5px var(--white));
 }
 .slant-left {
   border-top: 70px solid transparent;
@@ -396,12 +394,73 @@ main {
   transform: translateY(100%);
 }
 .parallax {
-  height: 300px;
+  height: 350px;
+  filter: brightness(40%) sepia(200%) hue-rotate(180deg) saturate(400%);
   z-index: -1;
 }
 .parallax1 {
   background: url(data-files/Calvin_Coolidge_Mrs._Coolidge_and_Senator_Curtis-1.jpg);
   background-attachment: fixed;
+  background-position: center;
   background-size: cover;
-  filter: brightness(40%) sepia(100%) hue-rotate(180deg) saturate(300%);
+}
+.parallax2 {
+  background: url(data-files/President_Coolidge_canonical-resize-1200x0-50.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+footer {
+  width: 100%;
+  height: 120px;
+  color: var(--white);
+  font-family: "Raleway", sans-serif;
+  position: relative;
+  z-index: 3;
+  filter: drop-shadow(0px 0px 3px black);
+  background: linear-gradient(to bottom, var(--deepblue), rgb(0, 0, 77));
+  .col-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .col-3:hover {
+    color: rgb(212, 210, 198);
+    transition: 0.3s;
+  }
+  .row {
+    height: calc(50% - 1px);
+  }
+  p {
+    height: calc(50% - 1px);
+    display: flex;
+    justify-content: center;
+    font-family: "Times New Roman", Times, serif;
+    align-items: center;
+  }
+  hr {
+    height: 2px;
+    border: none;
+    width: 90%;
+    border-radius: 20px;
+    background: var(--white);
+    padding: 0;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.slant-short {
+  height: 50px !important;
+}
+.fadeNavIn {
+}
+.fadeNavOut {
+}
+@keyframes fadeNavIn {
+}
+@keyframes fadeNavOut {
 }
