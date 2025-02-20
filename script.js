@@ -10,8 +10,162 @@ let quotes = [
   "Don’t expect to build up the weak by pulling down the strong.",
 ];
 let ulContent;
-
+function insertNav() {
+  let nav = `<div
+          class="d-none d-sm-block"
+          onmouseenter="menuDown()"
+          onmouseleave="menuUp()"
+        >
+          <div class="navBar" id="navbar">
+            <img class="picture" src="data-files/coolidge-portrait.jpg" onclick="linker('index.html')"/>
+            <ul id="ul">
+              <li>Early Life</li>
+              <li>In Government</li>
+              <li>Legacy</li>
+              <li>Timeline</li>
+            </ul>
+          </div>
+          <div class="mega-menu row" id="mega-menu">
+            <div class="col-4">
+              <h2 onclick="linker('early-life.html')">Early Life</h2>
+              <hr />
+              <ul>
+                <li>
+                  <p>Section</p>
+                </li>
+                <li>
+                  <p>Section</p>
+                </li>
+                <li>
+                  <p>Section</p>
+                </li>
+                <li>
+                  <p>Section</p>
+                </li>
+              </ul>
+            </div>
+            <div class="col-4">
+              <h2>In Government</h2>
+              <hr />
+              <ul>
+                <li>
+                  <p>Section</p>
+                </li>
+                <li>
+                  <p>Section</p>
+                </li>
+                <li>
+                  <p>Section</p>
+                </li>
+                <li>
+                  <p>Section</p>
+                </li>
+              </ul>
+            </div>
+            <div class="col-4">
+              <h2>Legacy</h2>
+              <hr />
+              <ul>
+                <li>
+                  <p>Section</p>
+                </li>
+                <li>
+                  <p>Section</p>
+                </li>
+                <li>
+                  <p>Section</p>
+                </li>
+                <li>
+                  <p>Section</p>
+                </li>
+              </ul>
+            </div>
+            <div class="col-12">
+              <hr />
+              <h2>Timeline</h2>
+            </div>
+          </div>
+        </div>
+        <div class="d-block d-sm-none">
+          <div class="navBar2">
+            <img class="picture" src="data-files/coolidge-portrait.jpg" onclick="linker('index.html')"/>
+            <div
+              class="hamburger"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#presNav"
+              aria-controls="presNav"
+            >
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+            </div>
+          </div>
+        </div>`;
+  let header = document.getElementsByTagName("HEADER")[0];
+  header.insertAdjacentHTML("afterbegin", nav);
+}
+function insertOffcanvas() {
+  let offcanvas = `
+    <div
+      class="offcanvas offcanvas-end"
+      data-bs-scroll="true"
+      tabindex="-1"
+      id="presNav"
+      aria-labelledby="presNavLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="presNavLabel">Menu</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <hr />
+      <div class="offcanvas-body">
+      <h2 onclick="linker('index.html')">Home</h2>
+        <ul>
+        <li onclick="linker('early-life.html')">Early Life
+        <ul>
+        <li>Section</li>
+        <li>Section</li>
+        <li>Section</li>
+        <li>Section</li>
+        </ul>
+        </li>
+        <li>In Government
+        <ul>
+        <li>Section</li>
+        <li>Section</li>
+        <li>Section</li>
+        <li>Section</li>
+        </ul>
+        </li>
+        <li>Legacy
+        <ul>
+        <li>Section</li>
+        <li>Section</li>
+        <li>Section</li>
+        <li>Section</li>
+        </ul>
+        </li>
+        <li>TImeline
+        <ul>
+        <li>Section</li>
+        <li>Section</li>
+        <li>Section</li>
+        <li>Section</li>
+        </ul>
+        </li>
+        </ul>
+      </div>
+    </div>`;
+  document.body.insertAdjacentHTML("beforeend", offcanvas);
+}
 window.onload = function startup() {
+  insertNav();
+  insertOffcanvas();
   let menu = document.getElementById("mega-menu");
   let nav = document.getElementById("navbar");
   menu.setAttribute("style", `top: -${menu.offsetHeight + nav.offsetHeight}px`);
@@ -54,26 +208,26 @@ window.onload = function startup() {
     quotes[Math.floor(Math.random() * quotes.length)]
   }&#8221;`;
 };
-
 function menuDown() {
   document.getElementById("mega-menu").classList.remove("menuUp");
   document.getElementById("mega-menu").classList.add("menuDown");
   ulContent = document.getElementById("ul").innerHTML;
   document.getElementById("ul").innerHTML = "";
 }
-
 function menuUp() {
   document.getElementById("mega-menu").classList.remove("menuDown");
   document.getElementById("mega-menu").classList.add("menuUp");
   document.getElementById("ul").innerHTML = ulContent;
 }
-
-window.addEventListener("scroll", function () {
-  if (scrollY > window.innerHeight + 150 && window.innerWidth > 576) {
-    document.getElementById("navBar").classList.remove("fadeNavOut");
-    document.getElementById("navBar").classList.add("fadeNavIn");
-  } else {
-    document.getElementById("navBar").classList.remove("fadeNavIn");
-    document.getElementById("navBar").classList.add("fadeNavOut");
-  }
-});
+// window.addEventListener("scroll", function () {
+//   if (scrollY > window.innerHeight + 150 && window.innerWidth > 576) {
+//     document.getElementById("navbar").classList.remove("fadeNavOut");
+//     document.getElementById("navbar").classList.add("fadeNavIn");
+//   } else {
+//     document.getElementById("navbar").classList.remove("fadeNavIn");
+//     document.getElementById("navbar").classList.add("fadeNavOut");
+//   }
+// });
+function linker(url) {
+  window.location = url;
+}

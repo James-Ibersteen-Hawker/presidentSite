@@ -215,6 +215,13 @@ header {
     padding: 0 !important;
     margin: 0;
     margin-bottom: -10px;
+    text-shadow: 0px 0px 0px black;
+    transition: 0.1s;
+    cursor: pointer;
+  }
+  h2:hover {
+    text-shadow: 0px 0px 3px black;
+    transition: 0.1s;
   }
   hr {
     height: 5px;
@@ -326,7 +333,7 @@ header {
 }
 #quote {
   width: calc(100% - 200px);
-  font-size: 30px;
+  font-size: 23px;
   padding-left: 15px;
 }
 #quote-image {
@@ -359,11 +366,36 @@ main {
   background: tan;
   border-top: 3px solid var(--deepblue);
 }
+#subQuoteImage {
+  display: none;
+}
 .container-fluid {
   padding: 0 !important;
   margin: 0 !important;
 }
 @media screen and (max-width: 680px) {
+  .quote-box {
+    height: auto;
+    display: block;
+  }
+  .quote-box::after,
+  .quote-box::before {
+    display: none;
+  }
+  #quote-image {
+    display: none;
+  }
+  #quote {
+    width: 100%;
+  }
+  #subQuoteImage {
+    text-align: right;
+    padding: 5px;
+    font-weight: 900;
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+    display: block;
+  }
 }
 .slant {
   width: 100%;
@@ -372,8 +404,7 @@ main {
   background: linear-gradient(to bottom, maroon, var(--red));
   position: relative;
   z-index: 2;
-  filter: drop-shadow(0px 0px 3px var(--white))
-    drop-shadow(0px 0px 5px var(--white));
+  margin-bottom: 400px;
 }
 .slant-left {
   border-top: 70px solid transparent;
@@ -455,12 +486,14 @@ footer {
 }
 .slant-short {
   height: 50px !important;
+  margin-bottom: 0 !important;
 }
-.fadeNavIn {
-}
-.fadeNavOut {
-}
-@keyframes fadeNavIn {
-}
-@keyframes fadeNavOut {
+.videoParallax {
+  position: absolute;
+  bottom: 0;
+  height: 400px;
+  width: 100%;
+  background-color: green;
+  transform: translateY(100%);
+  z-index: -2;
 }
