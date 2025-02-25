@@ -166,6 +166,7 @@ function insertOffcanvas() {
 window.onload = function startup() {
   insertNav();
   insertOffcanvas();
+  videoTrigger();
   let menu = document.getElementById("mega-menu");
   let nav = document.getElementById("navbar");
   menu.setAttribute("style", `top: -${menu.offsetHeight + nav.offsetHeight}px`);
@@ -231,3 +232,62 @@ function menuUp() {
 function linker(url) {
   window.location = url;
 }
+function videoTrigger() {
+  let video1 = {
+    elem: document.getElementById("video1"),
+    get pos() {
+      let objOffset = this.elem.getBoundingClientRect().top;
+      let scrollPos = Math.round(
+        window.visualViewport.pageTop + objOffset - 80
+      );
+      return scrollPos;
+    },
+  };
+  video1.elem.muted = true;
+  video1.elem.loop = true;
+  let video2 = {
+    elem: document.getElementById("video2"),
+    get pos() {
+      let objOffset = this.elem.getBoundingClientRect().top;
+      let scrollPos = Math.round(
+        window.visualViewport.pageTop + objOffset - 80
+      );
+      return scrollPos;
+    },
+  };
+  video2.elem.muted = true;
+  video2.elem.loop = true;
+  let video3 = {
+    elem: document.getElementById("video3"),
+    get pos() {
+      let objOffset = this.elem.getBoundingClientRect().top;
+      let scrollPos = Math.round(
+        window.visualViewport.pageTop + objOffset - 80
+      );
+      return scrollPos;
+    },
+  };
+  video3.elem.muted = true;
+  video3.elem.loop = true;
+  //if in range
+  if (
+    window.scrollY > video1.pos - 500 &&
+    window.scrollY < video1.pos + video1.elem.offsetHeight - 300
+  )
+    video1.elem.play();
+  else video1.elem.pause();
+  if (
+    window.scrollY > video2.pos - 500 &&
+    window.scrollY < video2.pos + video2.elem.offsetHeight - 300
+  )
+    video2.elem.play();
+  else video2.elem.pause();
+  if (
+    window.scrollY > video3.pos - 500 &&
+    window.scrollY < video3.pos + video3.elem.offsetHeight - 300
+  )
+    video3.elem.play();
+  else video3.elem.pause();
+}
+
+window.addEventListener("scroll", videoTrigger);
