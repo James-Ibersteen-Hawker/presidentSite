@@ -12,6 +12,8 @@ body {
   --deepblue: rgb(21, 5, 110);
   --red: rgb(189, 0, 0);
   --white: rgb(255, 251, 234);
+  --blue-filter: brightness(50%) sepia(100%) hue-rotate(180deg) saturate(200%)
+    contrast(140%);
 }
 canvas {
   margin: 0 !important;
@@ -35,10 +37,6 @@ canvas {
   box-sizing: border-box;
   cursor: pointer;
 }
-/* 
-.box:hover {
-  filter: brightness(0.5);
-} */
 #header {
   position: relative;
   height: 100vh;
@@ -108,8 +106,7 @@ header {
   user-select: none;
 }
 #header2 h1 {
-  backdrop-filter: brightness(50%) sepia(100%) hue-rotate(180deg) saturate(200%)
-    contrast(140%);
+  backdrop-filter: var(--blue-filter);
   height: 100%;
   width: 100%;
   display: flex;
@@ -164,6 +161,7 @@ header {
   margin: 10px;
   border-radius: 40%;
   border: 4px solid var(--deepblue);
+  cursor: pointer;
   box-sizing: border-box;
   box-shadow: 0px 0px 2px black, 0px 0px 2px black inset;
 }
@@ -404,7 +402,7 @@ main {
   background: linear-gradient(to bottom, maroon, var(--red));
   position: relative;
   z-index: 2;
-  margin-bottom: 400px;
+  margin-bottom: 600px;
 }
 .slant-left {
   border-top: 70px solid transparent;
@@ -491,9 +489,25 @@ footer {
 .videoParallax {
   position: absolute;
   bottom: 0;
-  height: 400px;
+  height: 600px;
   width: 100%;
-  background-color: green;
+  background-color: black;
   transform: translateY(100%);
   z-index: -2;
+}
+video {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  object-position: center;
+}
+.headerImage {
+  height: 100vh;
+  width: 100%;
+  background: url(data-files/coolidge_young.webp);
+}
+.headerH1 {
+  width: 100%;
+  height: 100%;
+  backdrop-filter: var(--blue-filter);
 }
