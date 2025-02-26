@@ -12,8 +12,8 @@ body {
   --deepblue: rgb(21, 5, 110);
   --red: rgb(189, 0, 0);
   --white: rgb(255, 251, 234);
-  --blue-filter: brightness(50%) sepia(100%) hue-rotate(180deg) saturate(200%)
-    contrast(140%);
+  --blue-filter: brightness(55%) sepia(100%) hue-rotate(180deg) saturate(200%)
+    contrast(130%);
 }
 canvas {
   margin: 0 !important;
@@ -398,11 +398,65 @@ main {
 .slant {
   width: 100%;
   min-height: 200px;
-  height: 350px;
   background: linear-gradient(to bottom, maroon, var(--red));
   position: relative;
   z-index: 2;
+  padding-top: 20px;
+  padding-bottom: 20px;
   margin-bottom: 600px;
+  color: var(--white);
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: justify;
+}
+img {
+  object-fit: cover;
+  aspect-ratio: 4/3;
+  object-position: top;
+  border-radius: 5px;
+  height: 100%;
+  border: 5px solid var(--deepblue);
+  width: 100%;
+  box-shadow: 0px 0px 3px black;
+  outline: none;
+}
+
+.imageDiv {
+  padding: 10px;
+  padding-right: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media screen and (max-width: 576px) {
+  .slant {
+    margin-bottom: 300px;
+  }
+  .imageDiv {
+    width: 95%;
+  }
+  video {
+    display: none;
+  }
+  .videoParallax {
+    box-shadow: 0px 0px 5px black inset;
+  }
+  #indexParallax1 {
+    background: url(data-files/coolidge-smiles.jpg);
+    filter: var(--blue-filter) contrast(140%);
+  }
+  #indexParallax2 {
+    background: url(data-files/Calvin_Coolidge_Mrs._Coolidge_and_Senator_Curtis-1.jpg);
+    filter: var(--blue-filter);
+  }
+  #indexParallax3 {
+    background: url(data-files/President_Coolidge_canonical-resize-1200x0-50.jpg);
+    filter: var(--blue-filter);
+  }
+  .slant-left,
+  .slant-right {
+    display: none;
+  }
 }
 .slant-left {
   border-top: 70px solid transparent;
