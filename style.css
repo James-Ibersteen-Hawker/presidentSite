@@ -12,6 +12,8 @@ body {
   --deepblue: rgb(21, 5, 110);
   --red: rgb(189, 0, 0);
   --white: rgb(255, 251, 234);
+  --blue-filter: brightness(55%) sepia(100%) hue-rotate(180deg) saturate(200%)
+    contrast(130%);
 }
 canvas {
   margin: 0 !important;
@@ -35,10 +37,6 @@ canvas {
   box-sizing: border-box;
   cursor: pointer;
 }
-/* 
-.box:hover {
-  filter: brightness(0.5);
-} */
 #header {
   position: relative;
   height: 100vh;
@@ -108,8 +106,7 @@ header {
   user-select: none;
 }
 #header2 h1 {
-  backdrop-filter: brightness(50%) sepia(100%) hue-rotate(180deg) saturate(200%)
-    contrast(140%);
+  backdrop-filter: var(--blue-filter);
   height: 100%;
   width: 100%;
   display: flex;
@@ -164,6 +161,7 @@ header {
   margin: 10px;
   border-radius: 40%;
   border: 4px solid var(--deepblue);
+  cursor: pointer;
   box-sizing: border-box;
   box-shadow: 0px 0px 2px black, 0px 0px 2px black inset;
 }
@@ -215,6 +213,13 @@ header {
     padding: 0 !important;
     margin: 0;
     margin-bottom: -10px;
+    text-shadow: 0px 0px 0px black;
+    transition: 0.1s;
+    cursor: pointer;
+  }
+  h2:hover {
+    text-shadow: 0px 0px 3px black;
+    transition: 0.1s;
   }
   hr {
     height: 5px;
@@ -326,7 +331,7 @@ header {
 }
 #quote {
   width: calc(100% - 200px);
-  font-size: 30px;
+  font-size: 23px;
   padding-left: 15px;
 }
 #quote-image {
@@ -359,21 +364,98 @@ main {
   background: tan;
   border-top: 3px solid var(--deepblue);
 }
+#subQuoteImage {
+  display: none;
+}
 .container-fluid {
   padding: 0 !important;
   margin: 0 !important;
 }
 @media screen and (max-width: 680px) {
+  .quote-box {
+    height: auto;
+    display: block;
+  }
+  .quote-box::after,
+  .quote-box::before {
+    display: none;
+  }
+  #quote-image {
+    display: none;
+  }
+  #quote {
+    width: 100%;
+  }
+  #subQuoteImage {
+    text-align: right;
+    padding: 5px;
+    font-weight: 900;
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+    display: block;
+  }
 }
 .slant {
   width: 100%;
   min-height: 200px;
-  height: 350px;
   background: linear-gradient(to bottom, maroon, var(--red));
   position: relative;
   z-index: 2;
-  filter: drop-shadow(0px 0px 3px var(--white))
-    drop-shadow(0px 0px 5px var(--white));
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 600px;
+  color: var(--white);
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: justify;
+}
+.slant img {
+  object-fit: cover;
+  aspect-ratio: 4/3;
+  object-position: top;
+  border-radius: 5px;
+  height: 100%;
+  border: 5px solid var(--deepblue);
+  width: 100%;
+  box-shadow: 0px 0px 3px black;
+  outline: none;
+}
+.imageDiv {
+  padding: 10px;
+  padding-right: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media screen and (max-width: 768px) {
+  .slant {
+    margin-bottom: 300px;
+  }
+  .imageDiv {
+    width: 95%;
+  }
+  video {
+    display: none;
+  }
+  .videoParallax {
+    box-shadow: 0px 0px 5px black inset;
+  }
+  #indexParallax1 {
+    background: url(data-files/coolidge-smiles.jpg);
+    filter: var(--blue-filter) contrast(140%);
+  }
+  #indexParallax2 {
+    background: url(data-files/Calvin_Coolidge_Mrs._Coolidge_and_Senator_Curtis-1.jpg);
+    filter: var(--blue-filter);
+  }
+  #indexParallax3 {
+    background: url(data-files/President_Coolidge_canonical-resize-1200x0-50.jpg);
+    filter: var(--blue-filter);
+  }
+  .slant-left,
+  .slant-right {
+    display: none;
+  }
 }
 .slant-left {
   border-top: 70px solid transparent;
@@ -455,7 +537,9 @@ footer {
 }
 .slant-short {
   height: 50px !important;
+  margin-bottom: 0 !important;
 }
+<<<<<<< HEAD
 .fadeNavIn {
   animation-name: fadeNavIn;
   animation-duration: 0.2s;
@@ -599,4 +683,30 @@ footer {
   100% {
     background: linear-gradient(to bottom, maroon, var(--red));
   }
+=======
+.videoParallax {
+  position: absolute;
+  bottom: 0;
+  height: 600px;
+  width: 100%;
+  background-color: black;
+  transform: translateY(100%);
+  z-index: -2;
+}
+video {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  object-position: center;
+}
+.headerImage {
+  height: 100vh;
+  width: 100%;
+  background: url(data-files/coolidge_young.webp);
+}
+.headerH1 {
+  width: 100%;
+  height: 100%;
+  backdrop-filter: var(--blue-filter);
+>>>>>>> 050caf2c41d65a0cbc2cb3002b96bc10455e3b5e
 }

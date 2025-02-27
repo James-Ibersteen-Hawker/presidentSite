@@ -6,9 +6,6 @@ let cRes = 3;
 let placed = 0;
 let pointDimension = 5;
 let color = "white";
-canvas.addEventListener("click", function (event) {
-  alert(`${event.clientX}, ${event.clientY}`);
-});
 let subWidth = 1;
 let subHeight = subWidth;
 function quadraticBezier(p1, p2, p3) {
