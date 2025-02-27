@@ -457,10 +457,146 @@ footer {
   height: 50px !important;
 }
 .fadeNavIn {
+  animation-name: fadeNavIn;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 .fadeNavOut {
+  animation-name: fadeNavOut;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 @keyframes fadeNavIn {
+  0% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  5% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  10% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  15% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  20% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  25% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  30% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  35% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  40% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  45% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  50% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  55% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  60% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  65% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  70% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  75% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  80% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  85% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  90% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  95% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  100% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
 }
-@keyframes fadeNavOut {
+@keyframes fadeNaOut {
+  0% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  5% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  10% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  15% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  20% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  25% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  30% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  35% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  40% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  45% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  50% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  55% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  60% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  65% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  70% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  75% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  80% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  85% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  90% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  95% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
+  100% {
+    background: linear-gradient(to bottom, maroon, var(--red));
+  }
 }
