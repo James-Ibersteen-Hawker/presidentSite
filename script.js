@@ -12,7 +12,7 @@ let quotes = [
 let ulContent;
 function insertNav() {
   let nav = `<div
-          class="d-none d-sm-block"
+          class="d-none d-md-block"
           onmouseenter="menuDown()"
           onmouseleave="menuUp()"
         >
@@ -86,7 +86,7 @@ function insertNav() {
             </div>
           </div>
         </div>
-        <div class="d-block d-sm-none">
+        <div class="d-block d-md-none">
           <div class="navBar2">
             <img class="picture" src="data-files/coolidge-portrait.jpg" onclick="linker('index.html')"/>
             <div
@@ -271,23 +271,22 @@ function videoTrigger() {
   video3.elem.loop = true;
   //if in range
   if (
-    window.scrollY > video1.pos - 500 &&
+    window.scrollY > video1.pos - 300 &&
     window.scrollY < video1.pos + video1.elem.offsetHeight - 300
   )
     video1.elem.play();
   else video1.elem.pause();
   if (
-    window.scrollY > video2.pos - 500 &&
+    window.scrollY > video2.pos - 300 &&
     window.scrollY < video2.pos + video2.elem.offsetHeight - 300
   )
     video2.elem.play();
   else video2.elem.pause();
   if (
-    window.scrollY > video3.pos - 500 &&
+    window.scrollY > video3.pos - 300 &&
     window.scrollY < video3.pos + video3.elem.offsetHeight - 300
   )
     video3.elem.play();
   else video3.elem.pause();
 }
-
 window.addEventListener("scroll", videoTrigger);
