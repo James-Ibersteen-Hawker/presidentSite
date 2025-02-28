@@ -10,161 +10,10 @@ let quotes = [
   "Don’t expect to build up the weak by pulling down the strong.",
 ];
 let ulContent;
-function insertNav() {
-  let nav = `<div
-          class="d-none d-md-block"
-          onmouseenter="menuDown()"
-          onmouseleave="menuUp()"
-        >
-          <div class="navBar" id="navbar">
-            <img class="picture" src="data-files/coolidge-portrait.jpg" onclick="linker('index.html')"/>
-            <ul id="ul">
-              <li>Early Life</li>
-              <li>In Government</li>
-              <li>Legacy</li>
-              <li>Timeline</li>
-            </ul>
-          </div>
-          <div class="mega-menu row" id="mega-menu">
-            <div class="col-4">
-              <h2 onclick="linker('early-life.html')">Early Life</h2>
-              <hr />
-              <ul>
-                <li>
-                  <p>Section</p>
-                </li>
-                <li>
-                  <p>Section</p>
-                </li>
-                <li>
-                  <p>Section</p>
-                </li>
-                <li>
-                  <p>Section</p>
-                </li>
-              </ul>
-            </div>
-            <div class="col-4">
-              <h2>In Government</h2>
-              <hr />
-              <ul>
-                <li>
-                  <p>Section</p>
-                </li>
-                <li>
-                  <p>Section</p>
-                </li>
-                <li>
-                  <p>Section</p>
-                </li>
-                <li>
-                  <p>Section</p>
-                </li>
-              </ul>
-            </div>
-            <div class="col-4">
-              <h2>Legacy</h2>
-              <hr />
-              <ul>
-                <li>
-                  <p>Section</p>
-                </li>
-                <li>
-                  <p>Section</p>
-                </li>
-                <li>
-                  <p>Section</p>
-                </li>
-                <li>
-                  <p>Section</p>
-                </li>
-              </ul>
-            </div>
-            <div class="col-12">
-              <hr />
-              <h2>Timeline</h2>
-            </div>
-          </div>
-        </div>
-        <div class="d-block d-md-none">
-          <div class="navBar2">
-            <img class="picture" src="data-files/coolidge-portrait.jpg" onclick="linker('index.html')"/>
-            <div
-              class="hamburger"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#presNav"
-              aria-controls="presNav"
-            >
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-            </div>
-          </div>
-        </div>`;
-  let header = document.getElementsByTagName("HEADER")[0];
-  header.insertAdjacentHTML("afterbegin", nav);
-}
-function insertOffcanvas() {
-  let offcanvas = `
-    <div
-      class="offcanvas offcanvas-end"
-      data-bs-scroll="true"
-      tabindex="-1"
-      id="presNav"
-      aria-labelledby="presNavLabel"
-    >
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="presNavLabel">Menu</h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="offcanvas"
-          aria-label="Close"
-        ></button>
-      </div>
-      <hr />
-      <div class="offcanvas-body">
-      <h2 onclick="linker('index.html')">Home</h2>
-        <ul>
-        <li onclick="linker('early-life.html')">Early Life
-        <ul>
-        <li>Section</li>
-        <li>Section</li>
-        <li>Section</li>
-        <li>Section</li>
-        </ul>
-        </li>
-        <li>In Government
-        <ul>
-        <li>Section</li>
-        <li>Section</li>
-        <li>Section</li>
-        <li>Section</li>
-        </ul>
-        </li>
-        <li>Legacy
-        <ul>
-        <li>Section</li>
-        <li>Section</li>
-        <li>Section</li>
-        <li>Section</li>
-        </ul>
-        </li>
-        <li>TImeline
-        <ul>
-        <li>Section</li>
-        <li>Section</li>
-        <li>Section</li>
-        <li>Section</li>
-        </ul>
-        </li>
-        </ul>
-      </div>
-    </div>`;
-  document.body.insertAdjacentHTML("beforeend", offcanvas);
-}
+window.addEventListener("scroll", videoTrigger);
 window.onload = function startup() {
   insertNav();
+  footerAdd();
   insertOffcanvas();
   videoTrigger();
   let menu = document.getElementById("mega-menu");
@@ -208,7 +57,11 @@ window.onload = function startup() {
   document.getElementById("quote").innerHTML = `&#8220;${
     quotes[Math.floor(Math.random() * quotes.length)]
   }&#8221;`;
+  menuUp();
 };
+window.addEventListener("resize", function () {
+  menuUp();
+});
 function menuDown() {
   document.getElementById("mega-menu").classList.remove("menuUp");
   document.getElementById("mega-menu").classList.add("menuDown");
@@ -220,15 +73,6 @@ function menuUp() {
   document.getElementById("mega-menu").classList.add("menuUp");
   document.getElementById("ul").innerHTML = ulContent;
 }
-// window.addEventListener("scroll", function () {
-//   if (scrollY > window.innerHeight + 150 && window.innerWidth > 576) {
-//     document.getElementById("navbar").classList.remove("fadeNavOut");
-//     document.getElementById("navbar").classList.add("fadeNavIn");
-//   } else {
-//     document.getElementById("navbar").classList.remove("fadeNavIn");
-//     document.getElementById("navbar").classList.add("fadeNavOut");
-//   }
-// });
 function linker(url) {
   window.location = url;
 }
@@ -289,4 +133,171 @@ function videoTrigger() {
     video3.elem.play();
   else video3.elem.pause();
 }
-window.addEventListener("scroll", videoTrigger);
+function footerAdd() {
+  let footer = `<footer class="container-fluid">
+      <div class="row">
+        <div class="col-3" onclick="linker('early-life.html')">Early Life</div>
+        <div class="col-3" onclick="linker('govt.html')">In Government</div>
+        <div class="col-3" onclick="linker('legacy.html')">Legacy</div>
+        <div class="col-3" onclick="linker('index.html#timeline')">Timeline</div>
+      </div>
+      <hr />
+      <p><a href="index.html">Copyright &copy; Remy Serbinenko, 2025</a></p>
+    </footer>`;
+  document.body.insertAdjacentHTML("beforeend", footer);
+}
+function insertNav() {
+  let nav = `<div
+          class="d-none d-md-block"
+          onmouseenter="menuDown()"
+          onmouseleave="menuUp()"
+        >
+          <div class="navBar" id="navbar">
+            <img class="picture" src="data-files/coolidge-portrait.jpg" onclick="linker('index.html')"/>
+            <ul id="ul">
+              <li>Early Life</li>
+              <li>In Government</li>
+              <li>Legacy</li>
+              <li>Timeline</li>
+            </ul>
+          </div>
+          <div class="mega-menu row" id="mega-menu">
+            <div class="col-4">
+              <h2 onclick="linker('early-life.html')">Early Life</h2>
+              <hr />
+              <ul>
+                <li>
+                  <p>Section</p>
+                </li>
+                <li>
+                  <p>Section</p>
+                </li>
+                <li>
+                  <p>Section</p>
+                </li>
+                <li>
+                  <p>Section</p>
+                </li>
+              </ul>
+            </div>
+            <div class="col-4">
+              <h2 onclick="linker('govt.html')">In Government</h2>
+              <hr />
+              <ul>
+                <li>
+                  <p>Section</p>
+                </li>
+                <li>
+                  <p>Section</p>
+                </li>
+                <li>
+                  <p>Section</p>
+                </li>
+                <li>
+                  <p>Section</p>
+                </li>
+              </ul>
+            </div>
+            <div class="col-4">
+              <h2 onclick="linker('legacy.html')">Legacy</h2>
+              <hr />
+              <ul>
+                <li>
+                  <p>Section</p>
+                </li>
+                <li>
+                  <p>Section</p>
+                </li>
+                <li>
+                  <p>Section</p>
+                </li>
+                <li>
+                  <p>Section</p>
+                </li>
+              </ul>
+            </div>
+            <div class="col-12">
+              <hr />
+              <h2 onclick="linker('index.html#timeline')" id="timelineNav">Timeline</h2>
+            </div>
+          </div>
+        </div>
+        <div class="d-block d-md-none">
+          <div class="navBar2">
+            <img class="picture" src="data-files/coolidge-portrait.jpg" onclick="linker('index.html')"/>
+            <div
+              class="hamburger"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#presNav"
+              aria-controls="presNav"
+            >
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+            </div>
+          </div>
+        </div>`;
+  let header = document.getElementsByTagName("HEADER")[0];
+  header.insertAdjacentHTML("afterbegin", nav);
+}
+function insertOffcanvas() {
+  let offcanvas = `
+    <div
+      class="offcanvas offcanvas-end"
+      data-bs-scroll="true"
+      tabindex="-1"
+      id="presNav"
+      aria-labelledby="presNavLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="presNavLabel">Menu</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+      <h2 onclick="linker('index.html')">Home</h2>
+      <hr>
+        <ul>
+        <li onclick="linker('early-life.html')"><span>Early Life</span>
+        <ul>
+        <li>Section</li>
+        <li>Section</li>
+        <li>Section</li>
+        <li>Section</li>
+        </ul>
+        </li>
+        <li onclick="linker('govt.html')"><span>In Government</span>
+        <ul>
+        <li>Section</li>
+        <li>Section</li>
+        <li>Section</li>
+        <li>Section</li>
+        </ul>
+        </li>
+        <li onclick="linker('legacy.html')"><span>Legacy</span>
+        <ul>
+        <li>Section</li>
+        <li>Section</li>
+        <li>Section</li>
+        <li>Section</li>
+        </ul>
+        </li>
+        <li onclick="linker('index.html#timeline')"><span>Timeline</span>
+        <ul>
+        <li>Section</li>
+        <li>Section</li>
+        <li>Section</li>
+        <li>Section</li>
+        </ul>
+        </li>
+        </ul>
+        <hr>
+        <p><a href="index.html">Copyright © Remy Serbinenko, 2025</a></p>
+      </div>
+    </div>`;
+  document.body.insertAdjacentHTML("beforeend", offcanvas);
+}
