@@ -287,12 +287,6 @@ function insertOffcanvas() {
         </ul>
         </li>
         <li onclick="linker('index.html#timeline')"><span>Timeline</span>
-        <ul>
-        <li>Section</li>
-        <li>Section</li>
-        <li>Section</li>
-        <li>Section</li>
-        </ul>
         </li>
         </ul>
         <hr>

@@ -573,12 +573,21 @@ video {
 .headerImage {
   height: 100vh;
   width: 100%;
-  background: url(data-files/coolidge_young.webp);
 }
 .headerH1 {
   width: 100%;
   height: 100%;
   backdrop-filter: var(--blue-filter);
+  display: flex;
+  align-items: end;
+  font-size: 150px;
+  line-height: 150px;
+  font-family: "Oswald", sans-serif;
+  padding: 15px;
+  color: transparent;
+  background: url(data-files/whiteGrunge.jpg);
+  background-clip: text;
+  filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.608));
 }
 .offcanvas {
   --bs-offcanvas-bg: rgba(128, 0, 0, 0.7);
