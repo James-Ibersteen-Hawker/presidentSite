@@ -177,17 +177,14 @@ function insertNav() {
               <h2 onclick="linker('early-life.html')">Early Life</h2>
               <hr />
               <ul>
-                <li>
-                  <p>Section</p>
+                <li onclick="linker('early-life.html#childhood')">
+                  <p>Childhood</p>
                 </li>
-                <li>
-                  <p>Section</p>
+                <li onclick="linker('early-life.html#family')">
+                  <p>Family</p>
                 </li>
-                <li>
-                  <p>Section</p>
-                </li>
-                <li>
-                  <p>Section</p>
+                <li onclick="linker('early-life.html#career')">
+                  <p>Early Career & Key Events</p>
                 </li>
               </ul>
             </div>
@@ -195,17 +192,17 @@ function insertNav() {
               <h2 onclick="linker('govt.html')">In Government</h2>
               <hr />
               <ul>
-                <li>
-                  <p>Section</p>
+                <li onclick="linker('govt.html#beginning')">
+                  <p>Beginnings</p>
                 </li>
-                <li>
-                  <p>Section</p>
+                <li onclick="linker('govt.html#election')">
+                  <p>Election</p>
                 </li>
-                <li>
-                  <p>Section</p>
+                <li onclick="linker('govt.html#vp')">
+                  <p>Vice Presidency</p>
                 </li>
-                <li>
-                  <p>Section</p>
+                <li onclick="linker('govt.html#president')">
+                  <p>Presidency</p>
                 </li>
               </ul>
             </div>
@@ -213,17 +210,11 @@ function insertNav() {
               <h2 onclick="linker('legacy.html')">Legacy</h2>
               <hr />
               <ul>
-                <li>
-                  <p>Section</p>
+                <li onclick="linker('legacy.html#back')">
+                  <p>Looking Back</p>
                 </li>
-                <li>
-                  <p>Section</p>
-                </li>
-                <li>
-                  <p>Section</p>
-                </li>
-                <li>
-                  <p>Section</p>
+                <li onclick="linker('legacy.html#legacy')">
+                  <p>Legacy</p>
                 </li>
               </ul>
             </div>
@@ -275,27 +266,42 @@ function insertOffcanvas() {
         <ul>
         <li onclick="linker('early-life.html')"><span>Early Life</span>
         <ul>
-        <li>Section</li>
-        <li>Section</li>
-        <li>Section</li>
-        <li>Section</li>
-        </ul>
+                <li onclick="linker('early-life.html#childhood')">
+                  <p>Childhood</p>
+                </li>
+                <li onclick="linker('early-life.html#family')">
+                  <p>Family</p>
+                </li>
+                <li onclick="linker('early-life.html#career')">
+                  <p>Early Career & Key Events</p>
+                </li>
+              </ul>
         </li>
         <li onclick="linker('govt.html')"><span>In Government</span>
         <ul>
-        <li>Section</li>
-        <li>Section</li>
-        <li>Section</li>
-        <li>Section</li>
-        </ul>
+                <li onclick="linker('govt.html#beginning')">
+                  <p>Beginnings</p>
+                </li>
+                <li onclick="linker('govt.html#election')">
+                  <p>Election</p>
+                </li>
+                <li onclick="linker('govt.html#vp')">
+                  <p>Vice Presidency</p>
+                </li>
+                <li onclick="linker('govt.html#president')">
+                  <p>Presidency</p>
+                </li>
+              </ul>
         </li>
         <li onclick="linker('legacy.html')"><span>Legacy</span>
         <ul>
-        <li>Section</li>
-        <li>Section</li>
-        <li>Section</li>
-        <li>Section</li>
-        </ul>
+                <li onclick="linker('legacy.html#back')">
+                  <p>Looking Back</p>
+                </li>
+                <li onclick="linker('legacy.html#legacy')">
+                  <p>Legacy</p>
+                </li>
+              </ul>
         </li>
         <li onclick="linker('index.html#timeline')"><span>Timeline</span>
         </li>
