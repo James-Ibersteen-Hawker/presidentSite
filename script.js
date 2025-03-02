@@ -11,14 +11,13 @@ let quotes = [
 ];
 let ulContent;
 window.addEventListener("scroll", videoTrigger);
-window.onload = function startup() {
+window.addEventListener("DOMContentLoaded", function () {
   insertNav();
   footerAdd();
   insertOffcanvas();
   videoTrigger();
   let menu = document.getElementById("mega-menu");
   let nav = document.getElementById("navbar");
-  menu.setAttribute("style", `top: -${menu.offsetHeight + nav.offsetHeight}px`);
   let anims = `@keyframes menuUp {
   from {
     top: 0;
@@ -53,12 +52,12 @@ window.onload = function startup() {
   document.getElementsByTagName("STYLE")[0].append(anims);
   document.getElementsByTagName("STYLE")[0].append(classes);
   ulContent = document.getElementById("ul").innerHTML;
+  menuUp();
   //quote
   document.getElementById("quote").innerHTML = `&#8220;${
     quotes[Math.floor(Math.random() * quotes.length)]
   }&#8221;`;
-  menuUp();
-};
+});
 window.addEventListener("resize", function () {
   menuUp();
 });
@@ -87,8 +86,10 @@ function videoTrigger() {
       return scrollPos;
     },
   };
-  video1.elem.muted = true;
-  video1.elem.loop = true;
+  if (video1.elem) {
+    video1.elem.muted = true;
+    video1.elem.loop = true;
+  }
   let video2 = {
     elem: document.getElementById("video2"),
     get pos() {
@@ -99,8 +100,10 @@ function videoTrigger() {
       return scrollPos;
     },
   };
-  video2.elem.muted = true;
-  video2.elem.loop = true;
+  if (video2.elem) {
+    video2.elem.muted = true;
+    video2.elem.loop = true;
+  }
   let video3 = {
     elem: document.getElementById("video3"),
     get pos() {
@@ -111,27 +114,35 @@ function videoTrigger() {
       return scrollPos;
     },
   };
-  video3.elem.muted = true;
-  video3.elem.loop = true;
+  if (video3.elem) {
+    video3.elem.muted = true;
+    video3.elem.loop = true;
+  }
   //if in range
-  if (
-    window.scrollY > video1.pos - 300 &&
-    window.scrollY < video1.pos + video1.elem.offsetHeight - 300
-  )
-    video1.elem.play();
-  else video1.elem.pause();
-  if (
-    window.scrollY > video2.pos - 300 &&
-    window.scrollY < video2.pos + video2.elem.offsetHeight - 300
-  )
-    video2.elem.play();
-  else video2.elem.pause();
-  if (
-    window.scrollY > video3.pos - 300 &&
-    window.scrollY < video3.pos + video3.elem.offsetHeight - 300
-  )
-    video3.elem.play();
-  else video3.elem.pause();
+  if (video1.elem) {
+    if (
+      window.scrollY > video1.pos - 300 &&
+      window.scrollY < video1.pos + video1.elem.offsetHeight - 300
+    )
+      video1.elem.play();
+    else video1.elem.pause();
+  }
+  if (video2.elem) {
+    if (
+      window.scrollY > video2.pos - 300 &&
+      window.scrollY < video2.pos + video2.elem.offsetHeight - 300
+    )
+      video2.elem.play();
+    else video2.elem.pause();
+  }
+  if (video3.elem) {
+    if (
+      window.scrollY > video3.pos - 300 &&
+      window.scrollY < video3.pos + video3.elem.offsetHeight - 300
+    )
+      video3.elem.play();
+    else video3.elem.pause();
+  }
 }
 function footerAdd() {
   let footer = `<footer class="container-fluid">

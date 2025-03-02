@@ -28,7 +28,7 @@
       href="https://fonts.googleapis.com/css2?family=Luxurious+Script&display=swap"
       rel="stylesheet"
     />
-    <link rel="preload" href="coolidge_head.html" />
+    <link rel="preload" href="coolidge_head.html" as="html" />
     <link rel="shortcut icon" href="data-files/icon.jpg" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
     <style></style>
@@ -71,40 +71,56 @@
       <div class="slant">
         <div class="slant-right"></div>
         <div class="row">
-          <div class="col-12 col-md-8">
-            Calvin Coolidge was the president of the US from 1923 to 1929. He
-            first served as vice president to President Warren G. Harding, from
-            1920 to 1923. He took over after Harding’s death in 1923 During his
-            presidency he was known for being a man of action and stability.
-            After he left office, he became known as the “Do nothing” president.
-            He was quite popular, and was known for being laconic, nicknamed
-            “Silent Cal”.
+          <div class="col-12 col-md-8 col-lg-9 mt-3">
+            &nbsp;&nbsp;&nbsp;Calvin Coolidge was the president of the US from
+            1923 to 1929. He first served as vice president to President Warren
+            G. Harding, from 1920 to 1923. He took over after Harding’s death in
+            1923. During his presidency he was known for being a man of action
+            and stability. After he left office, he became known as the
+            <i>“Do Nothing”</i> president. He was quite popular, and was known
+            for being laconic, nicknamed <i>“Silent Cal”</i>.
           </div>
-          <div class="col-12 col-md-4 imageDiv">
-            <img src="data-files/head.jpg" class="img-fluid" />
+          <div class="col-12 col-md-4 col-lg-3 imageDiv">
+            <figure class="text-center">
+              <img src="data-files/head.jpg" class="img-fluid" />
+              <div id="signatureCaption">text</div>
+            </figure>
           </div>
         </div>
-
-        <div class="videoParallax" id="indexParallax1">
+        <div class="videoParallax parallax1" id="indexParallax1">
           <video src="data-files/Coolidge-Moving.mp4" id="video1"></video>
         </div>
       </div>
-      <div class="slant">
+      <div class="slant" id="timeline">
         <div class="slant-left"></div>
         <div class="slant-right"></div>
-        <div class="videoParallax" id="indexParallax2">
-          <video src="data-files/Coolidge-Signing.mp4" id="video2"></video>
-        </div>
-      </div>
-      <div class="slant">
-        <div class="slant-left"></div>
-        <div class="slant-right"></div>
-        <div class="videoParallax" id="indexParallax3">
+        <h2 class="text-center">- Timeline -</h2>
+        <div class="timelineDiv"></div>
+        <div class="videoParallax parallax3" id="indexParallax3">
           <video src="data-files/Speech.mp4" id="video3"></video>
         </div>
       </div>
-      <div class="slant slant-short" id="timeline">
+      <div class="slant slant-short" id="bibliography">
         <div class="slant-left"></div>
+        <h2 class="text-center">- Bibliography -</h2>
+        <hr />
+        <div class="row">
+          <div class="col-12 col-md-4">
+            <ul>
+              <li>text</li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-4">
+            <ul>
+              <li>text</li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-4">
+            <ul>
+              <li>text</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </main>
     <!-- Bootstrap JavaScript Libraries -->

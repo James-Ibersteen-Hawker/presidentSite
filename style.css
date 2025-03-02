@@ -8,6 +8,7 @@ img {
 body {
   padding: 0 !important;
   margin: 0 !important;
+  width: 100vw;
   overflow-x: clip;
   --deepblue: rgb(21, 5, 110);
   --red: rgb(189, 0, 0);
@@ -44,11 +45,12 @@ canvas {
   /* background: black; */
 }
 iframe {
-  width: 100%;
+  width: 100vw;
   height: 100%;
   position: absolute;
   z-index: 0;
   filter: blur(3px);
+  overflow: clip;
 }
 #canvas {
   position: absolute;
@@ -92,6 +94,7 @@ iframe {
   }
 }
 header {
+  width: 100vw;
   background-color: black;
 }
 #header2 {
@@ -299,7 +302,7 @@ header {
   }
 }
 .quote-box {
-  width: 100%;
+  width: 100vw;
   height: 100px;
   background: transparent;
   font-family: "Raleway", sans-serif;
@@ -309,6 +312,8 @@ header {
   align-items: center;
   position: relative;
   z-index: 2;
+  /* padding-left: 10px; */
+  padding-right: 10px;
 }
 .quote-box::before,
 .quote-box::after {
@@ -382,6 +387,7 @@ main {
   .quote-box {
     height: auto;
     display: block;
+    padding-right: 20px;
   }
   .quote-box::after,
   .quote-box::before {
@@ -403,7 +409,8 @@ main {
   }
 }
 .slant {
-  width: 100%;
+  padding-right: 20px;
+  width: 100vw;
   min-height: 200px;
   background: linear-gradient(to bottom, maroon, var(--red));
   position: relative;
@@ -416,6 +423,17 @@ main {
   font-weight: 500;
   font-size: 20px;
   text-align: justify;
+  .row {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+  .col-lg-3 {
+    text-align: center;
+    figure {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 }
 .slant img {
   object-fit: cover;
@@ -433,9 +451,21 @@ main {
   margin-right: auto;
   margin-left: auto;
 }
+@media screen and (min-width: 1500px) {
+  .slant {
+    .row {
+      font-size: 25px;
+      padding-left: 200px !important;
+      padding-right: 200px !important;
+    }
+  }
+}
 @media screen and (max-width: 768px) {
   .slant {
     margin-bottom: 300px;
+    .row {
+      padding: initial;
+    }
   }
   .imageDiv {
     width: 95%;
@@ -446,22 +476,40 @@ main {
   .videoParallax {
     box-shadow: 0px 0px 5px black inset;
   }
-  #indexParallax1 {
+  .parallax1 {
     background: url(data-files/coolidge-smiles.jpg);
     filter: var(--blue-filter) contrast(140%);
     background-size: cover;
     background-position: center center;
   }
-  #indexParallax2 {
+  .parallax2 {
     background: url(data-files/Calvin_Coolidge_Mrs._Coolidge_and_Senator_Curtis-1.jpg);
     filter: var(--blue-filter);
     background-size: cover;
     background-position: center center;
   }
-  #indexParallax3 {
+  .parallax3 {
     background: url(data-files/President_Coolidge_canonical-resize-1200x0-50.jpg);
     filter: var(--blue-filter);
     background-size: cover;
+    background-position: center center;
+  }
+  .parallax4 {
+    background: url(data-files/young_1.jpg);
+    filter: var(--blue-filter);
+    background-size: cover !important;
+    background-position: center center;
+  }
+  .parallax5 {
+    background: url(data-files/coolidge_in_hats.webp);
+    filter: var(--blue-filter);
+    background-size: cover !important;
+    background-position: center center;
+  }
+  .parallax6 {
+    background: url(data-files/coolidge_fadeout.jpg);
+    filter: var(--blue-filter);
+    background-size: cover !important;
     background-position: center center;
   }
   .slant-left,
@@ -472,7 +520,7 @@ main {
 .slant-left {
   border-top: 70px solid transparent;
   border-right: 100vw solid maroon;
-  width: 100%;
+  width: 100vw;
   height: 70px;
   position: absolute;
   top: 0;
@@ -481,28 +529,11 @@ main {
 .slant-right {
   border-bottom: 70px solid transparent;
   border-left: 100vw solid var(--red);
-  width: 100%;
+  width: 100vw;
   height: 70px;
   position: absolute;
   bottom: 0;
   transform: translateY(100%);
-}
-.parallax {
-  height: 350px;
-  filter: brightness(40%) sepia(200%) hue-rotate(180deg) saturate(400%);
-  z-index: -1;
-}
-.parallax1 {
-  background: url(data-files/Calvin_Coolidge_Mrs._Coolidge_and_Senator_Curtis-1.jpg);
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-}
-.parallax2 {
-  background: url(data-files/President_Coolidge_canonical-resize-1200x0-50.jpg);
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
 }
 footer {
   width: 100%;
@@ -551,7 +582,7 @@ footer {
   }
 }
 .slant-short {
-  height: 50px !important;
+  padding-right: 0;
   margin-bottom: 0 !important;
 }
 .videoParallax {
@@ -674,4 +705,46 @@ video {
 }
 *[onclick^="linker"] {
   cursor: pointer;
+}
+figure {
+  position: relative;
+}
+#signatureCaption {
+  position: relative;
+  display: block;
+  aspect-ratio: 10/3;
+  width: 100%;
+  background: var(--white);
+  mask-image: url(data-files/signature.png);
+  mask-position: center;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  filter: drop-shadow(0px 0px 3px black);
+}
+figure::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  filter: blur(3px);
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+  border: 2px solid var(--white);
+  border-radius: 10px;
+}
+#bibliography {
+  text-align: center;
+  h2 {
+    font-family: "Luxurious Script", serif;
+    font-size: 40px;
+    user-select: none;
+  }
+  .row {
+    text-align: left;
+    padding-right: 20px;
+    ul {
+      list-style-type: none;
+    }
+  }
 }
