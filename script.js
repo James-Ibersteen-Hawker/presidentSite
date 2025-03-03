@@ -16,6 +16,7 @@ window.addEventListener("DOMContentLoaded", function () {
   footerAdd();
   insertOffcanvas();
   videoTrigger();
+  storeScroll();
   let menu = document.getElementById("mega-menu");
   let nav = document.getElementById("navbar");
   let anims = `@keyframes menuUp {
@@ -58,6 +59,10 @@ window.addEventListener("DOMContentLoaded", function () {
     quotes[Math.floor(Math.random() * quotes.length)]
   }&#8221;`;
 });
+window.onload = function () {
+  console.log("loaded");
+  storeScroll();
+};
 window.addEventListener("resize", function () {
   menuUp();
 });
@@ -74,6 +79,7 @@ function menuUp() {
 }
 function linker(url) {
   window.location = url;
+  storeScroll();
 }
 function videoTrigger() {
   let video1 = {
@@ -311,4 +317,30 @@ function insertOffcanvas() {
       </div>
     </div>`;
   document.body.insertAdjacentHTML("beforeend", offcanvas);
+}
+function storeScroll() {
+  let headings = Array.from(document.querySelectorAll(".sectionH"));
+  let scrollPos = [];
+  headings.forEach((elem) => {
+    scrollPos.push({
+      elem: elem.parentElement,
+      get pos() {
+        let objOffset = this.elem.getBoundingClientRect().top;
+        let scrollPos = Math.round(
+          window.visualViewport.pageTop + objOffset - 60
+        );
+        return scrollPos;
+      },
+    });
+  });
+  let url = document.location.href;
+  if (url.includes("#")) {
+    url = url.split("#");
+    url = url[url.length - 1];
+    for (let i = 0; i < scrollPos.length; i++) {
+      if (url == scrollPos[i].elem.id) {
+        window.scrollTo(0, scrollPos[i].pos);
+      }
+    }
+  }
 }
