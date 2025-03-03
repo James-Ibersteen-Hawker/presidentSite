@@ -15,6 +15,11 @@ body {
   --white: rgb(255, 251, 234);
   --blue-filter: brightness(55%) sepia(100%) hue-rotate(180deg) saturate(200%)
     contrast(130%);
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 canvas {
   margin: 0 !important;
@@ -468,9 +473,13 @@ main {
 @media screen and (max-width: 768px) {
   .slant {
     margin-bottom: 300px;
+    padding-right: 10px;
     .row {
       padding: initial;
     }
+  }
+  .slant-short {
+    padding-right: 10px;
   }
   .imageDiv {
     width: 95%;
@@ -736,6 +745,10 @@ video {
 }
 figure {
   position: relative;
+  div {
+    font-style: italic;
+    font-size: 15px;
+  }
 }
 #signatureCaption {
   position: relative;
@@ -773,4 +786,8 @@ figure::before {
 .sectionH {
   font-family: "Ysabeau", serif;
   text-align: center;
+  border-bottom: 1px solid rgba(255, 251, 234, 0.5);
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
 }
