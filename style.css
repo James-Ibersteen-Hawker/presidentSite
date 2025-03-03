@@ -409,7 +409,6 @@ main {
   }
 }
 .slant {
-  padding-right: 20px;
   width: 100vw;
   min-height: 200px;
   background: linear-gradient(to bottom, maroon, var(--red));
@@ -441,7 +440,7 @@ main {
   object-position: top;
   border-radius: 5px;
   height: 100%;
-  border: 5px solid var(--deepblue);
+  border: 2px solid var(--white);
   width: 100%;
   box-shadow: 0px 0px 3px black;
 }
@@ -514,6 +513,24 @@ main {
   }
   .parallax6 {
     background: url(data-files/coolidge_fadeout.jpg);
+    filter: var(--blue-filter);
+    background-size: cover !important;
+    background-position: center center;
+  }
+  .parallax7 {
+    background: url(data-files/71QyOgLv85L.jpg);
+    filter: var(--blue-filter);
+    background-size: cover !important;
+    background-position: center center;
+  }
+  .parallax8 {
+    background: url(data-files/calvin-coolidge.webp);
+    filter: var(--blue-filter);
+    background-size: cover !important;
+    background-position: center center;
+  }
+  .parallax9 {
+    background: url(data-files/group.jpeg);
     filter: var(--blue-filter);
     background-size: cover !important;
     background-position: center center;
@@ -739,18 +756,12 @@ figure::before {
   height: 100%;
   inset: 0;
   filter: blur(3px);
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.2);
   z-index: -1;
-  border: 2px solid var(--white);
   border-radius: 10px;
 }
 #bibliography {
   text-align: center;
-  h2 {
-    font-family: "Luxurious Script", serif;
-    font-size: 40px;
-    user-select: none;
-  }
   .row {
     text-align: left;
     padding-right: 20px;
@@ -758,4 +769,8 @@ figure::before {
       list-style-type: none;
     }
   }
+}
+.sectionH {
+  font-family: "Ysabeau", serif;
+  text-align: center;
 }
