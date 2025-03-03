@@ -204,11 +204,11 @@ function insertNav() {
                 <li onclick="linker('govt.html#election')">
                   <p>Election</p>
                 </li>
-                <li onclick="linker('govt.html#vp')">
-                  <p>Vice Presidency</p>
-                </li>
                 <li onclick="linker('govt.html#president')">
                   <p>Presidency</p>
+                </li>
+                <li onclick="linker('govt.html#presidentCont')">
+                  <p>Presidency Continued</p>
                 </li>
               </ul>
             </div>
@@ -291,11 +291,11 @@ function insertOffcanvas() {
                 <li onclick="linker('govt.html#election')">
                   <p>Election</p>
                 </li>
-                <li onclick="linker('govt.html#vp')">
-                  <p>Vice Presidency</p>
-                </li>
                 <li onclick="linker('govt.html#president')">
                   <p>Presidency</p>
+                </li>
+                <li onclick="linker('govt.html#presidentCont')">
+                  <p>Presidency Continued</p>
                 </li>
               </ul>
         </li>
