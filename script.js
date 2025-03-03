@@ -265,7 +265,7 @@ function insertOffcanvas() {
       <hr>
         <ul>
         <li onclick="linker('early-life.html')"><span>Early Life</span>
-        <ul>
+        <ul class="text-start">
                 <li onclick="linker('early-life.html#childhood')">
                   <p>Childhood</p>
                 </li>
@@ -278,7 +278,7 @@ function insertOffcanvas() {
               </ul>
         </li>
         <li onclick="linker('govt.html')"><span>In Government</span>
-        <ul>
+        <ul class="text-start">
                 <li onclick="linker('govt.html#beginning')">
                   <p>Beginnings</p>
                 </li>
@@ -294,7 +294,7 @@ function insertOffcanvas() {
               </ul>
         </li>
         <li onclick="linker('legacy.html')"><span>Legacy</span>
-        <ul>
+        <ul class="text-start">
                 <li onclick="linker('legacy.html#back')">
                   <p>Looking Back</p>
                 </li>

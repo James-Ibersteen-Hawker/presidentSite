@@ -680,7 +680,12 @@ video {
       ul {
         list-style-type: none;
         li {
+          padding-top: 14px !important;
+          display: flex;
+          justify-content: start;
+          align-items: center !important;
           font-size: 18px !important;
+          line-height: 18px;
           font-family: "Raleway", sans-serif;
           cursor: pointer;
           filter: brightness(100%);
