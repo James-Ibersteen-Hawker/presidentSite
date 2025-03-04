@@ -156,7 +156,7 @@ function footerAdd() {
         <div class="col-3" onclick="linker('early-life.html')">Early Life</div>
         <div class="col-3" onclick="linker('govt.html')">In Government</div>
         <div class="col-3" onclick="linker('legacy.html')">Legacy</div>
-        <div class="col-3" onclick="linker('index.html#timeline')">Timeline</div>
+        <div class="col-3" onclick="linker('index.html#timeline')">Infographic</div>
       </div>
       <hr />
       <p><a href="index.html">Copyright &copy; Remy Serbinenko, 2025</a></p>
