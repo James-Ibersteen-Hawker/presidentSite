@@ -816,11 +816,14 @@ figure::before {
     width: 100%;
     display: flex;
     justify-content: center;
-    iframe {
-      filter: blur(0px) !important;
+    img {
       width: 90vw !important;
-      aspect-ratio: 3/5;
+      height: auto !important;
       position: static !important;
+      margin-top: 10px;
+      box-shadow: none;
+      border: none;
+      object-fit: contain;
     }
   }
 }
