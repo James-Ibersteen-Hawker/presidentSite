@@ -90,7 +90,7 @@
           <div class="col-12 col-md-4 col-lg-3 imageDiv">
             <figure class="text-center">
               <img src="data-files/head.jpg" class="img-fluid" />
-              <div id="signatureCaption">text</div>
+              <div id="signatureCaption">Calvin Coolidge</div>
             </figure>
           </div>
         </div>
@@ -101,8 +101,25 @@
       <div class="slant" id="timeline">
         <div class="slant-left"></div>
         <div class="slant-right"></div>
-        <h2 class="sectionH">- Timeline -</h2>
-        <div class="timelineDiv"></div>
+        <h2 class="sectionH">- Infographic -</h2>
+        <div class="button-show text-center" onclick="infographic()">
+          Show Infographic (Taken from Encycopaedia Britannica's Website [I did
+          not make it])
+        </div>
+        <div class="timelineDiv">
+          <a
+            href="https://www.britannica.com/biography/Calvin-Coolidge"
+            target="_blank"
+          >
+            <iframe
+              src="frame.html"
+              width="90vw"
+              style="aspect-ratio: 3/5"
+              class="off d-none"
+              id="infographic"
+            ></iframe>
+          </a>
+        </div>
         <div class="videoParallax parallax3" id="indexParallax3">
           <video src="data-files/Speech-after-mountain.mp4" id="video3"></video>
         </div>

@@ -226,7 +226,7 @@ function insertNav() {
             </div>
             <div class="col-12">
               <hr />
-              <h2 onclick="linker('index.html#timeline')" id="timelineNav">Timeline</h2>
+              <h2 onclick="linker('index.html#timeline')" id="timelineNav">Infographic</h2>
             </div>
           </div>
         </div>
@@ -309,7 +309,7 @@ function insertOffcanvas() {
                 </li>
               </ul>
         </li>
-        <li onclick="linker('index.html#timeline')"><span>Timeline</span>
+        <li onclick="linker('index.html#timeline')"><span>Infographic</span>
         </li>
         </ul>
         <hr>
@@ -343,4 +343,7 @@ function storeScroll() {
       }
     }
   }
+}
+function infographic() {
+  document.getElementById("infographic").classList.toggle("d-none");
 }
