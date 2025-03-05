@@ -203,7 +203,7 @@ header {
 }
 .mega-menu {
   width: 100%;
-  background: rgba(255, 143, 143, 0.61);
+  background: rgba(255, 143, 143, 0.85);
   user-select: none;
   position: fixed;
   top: 0;
